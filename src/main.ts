@@ -13,8 +13,16 @@ import { createApp } from 'vue'
 // Plugins
 import { registerPlugins } from '@/plugins'
 
+// VueFire
+import { VueFire } from 'vuefire'
+import { firebaseApp } from './plugins/firebase'
+
 const app = createApp(App)
 
 registerPlugins(app)
 
-app.mount('#app')
+app
+  .use(VueFire, {
+    firebaseApp,
+  })
+  .mount('#app')
