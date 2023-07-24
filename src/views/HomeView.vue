@@ -1,15 +1,19 @@
-<script lang="ts" setup>
-import { useFirestore } from 'vuefire'
-const db = useFirestore()
-import { useCollection } from 'vuefire'
-import { collection } from 'firebase/firestore'
+<script setup lang="ts">
+import CafesView from './CafesView.vue'
+import CafesForm from './CafesForm.vue'
+import type { Cafe } from './CafesForm.vue'
 
-const colRef = collection(db, 'purchase')
-
-const purchases = useCollection(colRef)
+const handleClick = (cafes: Cafe) => {
+  console.log(cafes)
+}
 </script>
 
 <template>
-  <h1 class="text-center">Home</h1>
-  <h3>{{ purchases }}</h3>
+  <Suspense>
+    <CafesView />
+    <template #fallback> Loading... </template>
+  </Suspense>
+  <CafesForm @add-cafe="handleClick" />
 </template>
+
+<style scoped></style>
