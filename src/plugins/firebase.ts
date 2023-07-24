@@ -2,14 +2,14 @@
 import { initializeApp } from 'firebase/app'
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDPh0c9Mf5LOn1-gFwu6_MFWTZ28aPQe58',
-  authDomain: 'b3vibe.firebaseapp.com',
-  databaseURL: 'https://b3vibe-default-rtdb.firebaseio.com',
-  projectId: 'b3vibe',
-  storageBucket: 'b3vibe.appspot.com',
-  messagingSenderId: '129076972980',
-  appId: '1:129076972980:web:5892c4a2fc34ce995df6e1',
-  measurementId: 'G-1HG7WT517X',
+  apiKey: import.meta.env.VITE_APP_API_KEY,
+  authDomain: import.meta.env.VITE_APP_AUTH_DOMAIN,
+  databaseURL: import.meta.env.VITE_APP_DATABASE_URL,
+  projectId: import.meta.env.VITE_APP_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_APP_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_APP_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_APP_ID,
+  measurementId: import.meta.env.VITE_APP_MEASUREMENT_ID,
 }
 
 // Initialize Firebase
